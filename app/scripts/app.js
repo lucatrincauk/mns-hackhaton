@@ -11,7 +11,7 @@
 angular
 	.module('mnsHackhatonApp', [
 		'ngResource',
-		'ngSanitize'
+		'ngSanitize', 'ui.router', 'firebase'
 	]).config(function($stateProvider, $urlRouterProvider) {
 
 		$stateProvider
@@ -21,7 +21,10 @@ angular
 				abstract: true,
 				views: {
 					'footer': {
-						templateUrl: 'templates/footer.html'
+						templateUrl: 'views/footer.html'
+					},
+					'header': {
+						templateUrl: 'views/nav.html'
 					}
 				}
 			})
@@ -30,8 +33,8 @@ angular
 				url: '/',
 				views: {
 					'index@': {
-						templateUrl: 'templates/main.html',
-						controller: 'indexController'
+						templateUrl: 'views/main.html',
+						controller: 'MainCtrl'
 					}
 				},
 				resolve: {
@@ -43,8 +46,8 @@ angular
 				url: 'profile',
 				views: {
 					'index@': {
-						templateUrl: 'templates/main.html',
-						controller: 'indexController'
+						templateUrl: 'views/profile.html',
+						controller: 'MainCtrl'
 					}
 				},
 				resolve: {
