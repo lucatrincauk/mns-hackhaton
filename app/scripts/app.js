@@ -45,7 +45,7 @@ angular
 				// }
 			}
 		}).state('app.detail', {
-			url: 'detail',
+			url: '/detail',
 			views: {
 				'index@': {
 					templateUrl: 'views/detail.html',
@@ -58,7 +58,7 @@ angular
 				// }
 			}
 		}).state('app.addIdea', {
-			url: 'ideas/add',
+			url: '/ideas/add',
 			views: {
 				'index@': {
 					templateUrl: 'views/form.html',
