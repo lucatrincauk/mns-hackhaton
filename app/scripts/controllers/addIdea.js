@@ -15,15 +15,22 @@ angular.module('mnsHackhatonApp')
 		$scope.category = 'shape';
 
 		$scope.shape = '';
-		$scope.shapes = [
-			{ id: 0, name: 'A-Line' },
-			{ id: 1, name: 'Figure hugging' },
-			{ id: 2, name: 'Fit & Flare' },
-			{ id: 3, name: 'Pencil' }
-		];
+		$scope.shapes = [{
+			id: 0,
+			name: 'A-Line'
+		}, {
+			id: 1,
+			name: 'Figure hugging'
+		}, {
+			id: 2,
+			name: 'Fit & Flare'
+		}, {
+			id: 3,
+			name: 'Pencil'
+		}];
 
 		$scope.addIdea = function() {
-
+			$scope.idea.vote = 0;
 			$scope.ideas.$add($scope.idea).then(function() {
 				console.log('Added successfully');
 			}, function(error) {
