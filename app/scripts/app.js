@@ -51,12 +51,19 @@ angular
 				'index@': {
 					templateUrl: 'views/detail.html',
 					controller: 'SingleCtrl'
+				},
+				'comment@': {
+					templateUrl: 'views/commentForm.html',
+					controller: 'AddComment'
 				}
 			},
 			resolve: {
 				idea: function(Ideas, $stateParams) {
 					return Ideas.getOne($stateParams.id);
-				}
+				},
+			comments: function(Comments, $stateParams) {
+				return Comments.getOne($stateParams.id);
+			}
 			}
 		}).state('app.addIdea', {
 			url: '/ideas/add',

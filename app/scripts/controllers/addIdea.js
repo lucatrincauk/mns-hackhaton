@@ -8,7 +8,7 @@
  * Controller of the mnsHackhatonApp
  */
 angular.module('mnsHackhatonApp')
-	.controller('AddIdea', ['$scope', 'ideas', '$firebase', 'FirebaseUrl', function($scope, ideas, $firebase, FirebaseUrl) {
+	.controller('AddIdea', ['$scope', 'ideas', '$firebase', '$state', function($scope, ideas, $firebase, $state) {
 
 		$scope.idea = {};
 		$scope.ideas = ideas;
@@ -23,6 +23,7 @@ angular.module('mnsHackhatonApp')
 			$scope.idea.vote = 0;
 			$scope.ideas.$add($scope.idea).then(function() {
 				console.log('Added successfully');
+				$state.go('app.index');
 			}, function(error) {
 				console.log('Error:', error);
 			});
@@ -30,14 +31,14 @@ angular.module('mnsHackhatonApp')
 
 		$scope.setCategory = function(cat) {
 			$scope.category = cat;
-		}
+		};
 
 		$scope.setShape = function(shape) {
 			$scope.shape = shape;
 			$scope.shape.draw();
 		}
 		$scope.drawShape = function() {
-			if($scope.pattern != '')
+			if ($scope.pattern !== '')
 				$scope.drawShapeALine();
 			else
 				$scope.drawShapeALineOnStage();
@@ -80,7 +81,7 @@ angular.module('mnsHackhatonApp')
 					stage.addChild(shape);
 
 					stage.update();
-			};
+			};		
 
 			if($scope.pattern != '') {
 				var pattern = new Image();
@@ -90,7 +91,6 @@ angular.module('mnsHackhatonApp')
 				drawShapeALineOnStage('');
 			}
 
-
 		};
 
 		$scope.setColour = function() {
@@ -98,6 +98,8 @@ angular.module('mnsHackhatonApp')
 			$scope.pattern = '';
 			$scope.shape.draw();
 		};
+
+
 
 
 
