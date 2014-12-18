@@ -1,22 +1,17 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+<div class="page-header">
+  <h1>Ideas submitted</h1>
 </div>
 
-<div class="row marketing">
-  <h4>Ideas submitted</h4>
-
-
-
-<ul>
-  <li ng-repeat="idea in ideas">
-
-  <a ui-sref="app.detail({ id: (idea.$id)})">{{idea.title}}</a>
-  </li>
-  
-</ul>
+  <div class="row">
+  <div class="col-sm-6 col-md-4" ng-repeat="idea in ideas">
+    <div class="thumbnail">
+      <img src="http://placehold.it/300x300" alt="{{idea.title}}">
+      <div class="caption">
+        <h3>{{idea.title}}</h3>
+        <p>...</p>
+        <p><a ui-sref="app.detail({ id: (idea.$id)})" class="btn btn-primary" role="button">Open</a> </p>
+      </div>
+    </div>
+  </div>
 </div>
+

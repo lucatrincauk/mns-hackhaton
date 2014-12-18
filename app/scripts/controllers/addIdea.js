@@ -14,12 +14,12 @@ angular.module('mnsHackhatonApp')
 		$scope.ideas = ideas;
 
 		$scope.addIdea = function() {
-			console.log('adding');
 
-			// Synchronizing the items on our $scope
-
-			console.log($scope.ideas)
-			$scope.ideas.$add($scope.idea);
+			$scope.ideas.$add($scope.idea).then(function() {
+				console.log('Added successfully');
+			}, function(error) {
+				console.log('Error:', error);
+			});
 
 
 		};
