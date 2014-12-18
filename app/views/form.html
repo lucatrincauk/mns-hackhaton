@@ -17,10 +17,10 @@ Add an idea
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container-fluid">
 			<ul class="nav navbar-nav">
-				<li><a href="">Shape</a></li>
-				<li><a href="">Colour</a></li>
-				<li><a href="">Pattern</a></li>
-				<li><a href="">Features</a></li>
+				<li><a href="" ng-click="setCategory('shape')">Shape</a></li>
+				<li><a href="" ng-click="setCategory('colour')">Colour</a></li>
+				<li><a href="" ng-click="setCategory('pattern')">Pattern</a></li>
+				<li><a href="" ng-click="setCategory('features')">Features</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -28,7 +28,9 @@ Add an idea
 	<div class="highlight container-fluid">
 		<div class="row">
 			<div class="col-md-5 creator-options">
-				
+
+				<div ng-include="'/views/parameters/_' + category + '.html'"></div>
+
 			</div>
 			<div class="col-md-7 creator-canvas-container">
 				<canvas id="creator-canvas" class="creator-canvas"></canvas>

@@ -12,6 +12,7 @@ angular.module('mnsHackhatonApp')
 
 		$scope.idea = {};
 		$scope.ideas = ideas;
+		$scope.category = 'shape';
 
 		$scope.addIdea = function() {
 			console.log('adding');
@@ -23,5 +24,9 @@ angular.module('mnsHackhatonApp')
 
 
 		};
+
+		$scope.setCategory = function(cat) {
+			$scope.category = cat;
+		}
 
 	}]);

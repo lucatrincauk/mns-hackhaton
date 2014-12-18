@@ -5,10 +5,11 @@
 	margin-bottom: 0;
 }
 .creator-options {
+	padding: 10px 14px;
 	height: 350px;
 	background: #ddd;
 }
-.creator-options, .creator-canvas-container {
+.creator-canvas-container {
 	padding: 0;
 }
 .creator-canvas {
