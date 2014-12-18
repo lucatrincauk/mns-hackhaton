@@ -84,3 +84,17 @@ body {
 .hot {
   background: rgba(255, 0, 0, 0.34)
 }
+.glyphicon-thumbs-up{
+  margin-right: 5px;
+}
+.glyphicon-thumbs-down{
+  margin-left: 5px;
+}
+.msg-tile{
+  background-color: #efefef;
+  margin: 5px 0;
+  padding:5px;
+}
+.glyphicon{
+  color: #333;
+}

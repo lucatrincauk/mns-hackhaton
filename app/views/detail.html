@@ -1,4 +1,9 @@
-<div>
+
+<div class="highlight container-fluid">
+		<div class="row">
+			<div class="col-md-5 creator-options">
+
+				<div class="msg-tile">
 Title: 
 {{idea.title}}
 </div>
@@ -6,5 +11,16 @@ Title:
 {{idea.vote}}
 	
 </div>
-<div ng-click="voteUp()" class="glyphicon glyphicon-thumbs-up"></div>
+<div ng-click="voteUp()" class="glyphicon glyphicon-thumbs-up"></div> | 
 <div ng-click="voteDown()" class="glyphicon glyphicon-thumbs-down"></div>
+<p>Need 16 more likes</p>
+
+			</div>
+			<div class="col-md-7 creator-canvas-container">
+				<canvas id="creator-canvas" class="creator-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+
+
+

@@ -15,13 +15,23 @@ angular.module('mnsHackhatonApp')
 		$scope.category = 'colour';
 
 		$scope.shape = '';
-		$scope.shape = { id: 0, name: 'A-Line', draw: $scope.drawShapeALine };
-		$scope.shapes = [
-			{ id: 0, name: 'A-Line', draw: $scope.drawShapeALine },
-			{ id: 1, name: 'Figure hugging', draw: $scope.drawShapeALine },
-			{ id: 2, name: 'Fit & Flare', draw: $scope.drawShapeALine },
-			{ id: 3, name: 'Pencil', draw: $scope.drawShapeALine }
-		];
+		$scope.shapes = [{
+			id: 0,
+			name: 'A-Line', 
+			draw: $scope.drawShapeALine
+		}, {
+			id: 1,
+			name: 'Figure hugging', 
+			draw: $scope.drawShapeALine
+		}, {
+			id: 2,
+			name: 'Fit & Flare', 
+			draw: $scope.drawShapeALine
+		}, {
+			id: 3,
+			name: 'Pencil', 
+			draw: $scope.drawShapeALine
+		}];
 
 		$scope.colour = 'green';
 		$scope.colorpicker = { colour: '' };
@@ -29,7 +39,7 @@ angular.module('mnsHackhatonApp')
 		$scope.pattern = 'http://asset2.marksandspencer.com/is/image/mands/RC_01_T62_3766K_EE_X_EC_88?$PDP_SWL_STD$';
 
 		$scope.addIdea = function() {
-
+			$scope.idea.vote = 0;
 			$scope.ideas.$add($scope.idea).then(function() {
 				console.log('Added successfully');
 			}, function(error) {
