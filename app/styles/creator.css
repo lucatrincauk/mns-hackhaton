@@ -17,3 +17,10 @@
 	height: 350px;
 	background: #eee;
 }
+
+.colorpicker-preview {
+	display: inline-block;
+	margin: 2px 0 -6px -4px;
+	width: 24px;
+	height: 24px;
+}

@@ -12,18 +12,21 @@ angular.module('mnsHackhatonApp')
 
 		$scope.idea = {};
 		$scope.ideas = ideas;
-		$scope.category = 'shape';
+		$scope.category = 'colour';
 
 		$scope.shape = '';
-		$scope.shape = { id: 0, name: 'A-Line' };
+		$scope.shape = { id: 0, name: 'A-Line', draw: $scope.drawShapeALine };
 		$scope.shapes = [
-			{ id: 0, name: 'A-Line'},
-			{ id: 1, name: 'Figure hugging'},
-			{ id: 2, name: 'Fit & Flare'},
-			{ id: 3, name: 'Pencil'}
+			{ id: 0, name: 'A-Line', draw: $scope.drawShapeALine },
+			{ id: 1, name: 'Figure hugging', draw: $scope.drawShapeALine },
+			{ id: 2, name: 'Fit & Flare', draw: $scope.drawShapeALine },
+			{ id: 3, name: 'Pencil', draw: $scope.drawShapeALine }
 		];
 
 		$scope.colour = 'green';
+		$scope.colorpicker = { colour: '' };
+
+		$scope.pattern = 'http://asset2.marksandspencer.com/is/image/mands/RC_01_T62_3766K_EE_X_EC_88?$PDP_SWL_STD$';
 
 		$scope.addIdea = function() {
 
@@ -45,43 +48,63 @@ angular.module('mnsHackhatonApp')
 			$scope.drawShape();
 		}
 		$scope.drawShape = function() {
+			if($scope.pattern != '')
+				$scope.drawShapeALine();
+			else
+				$scope.drawShapeALineOnStage();
+		};
+		$scope.drawShapeALine = function() {
 
-			//Create a stage by getting a reference to the canvas
-			var canvas = document.getElementById("creator-canvas");
-			var stage = new createjs.Stage(canvas);
-
-			//Create a Shape DisplayObject
-			var shape = new createjs.Shape();
-
-			//draw lines
-			shape.graphics.moveTo(0, 0)
-			    .beginStroke("black")
-			    .beginFill($scope.colour)
-			    .moveTo(0, 0)
-			    .lineTo(80, -20)
-			    .lineTo(150, -20)
-			    .lineTo(230, 0)
-			    .lineTo(215, 15)
-			    .lineTo(150, 0)
-			    .lineTo(150, 70)
-			    .lineTo(80, 70)
-			    .lineTo(80, 0)
-			    .lineTo(15, 15)
-			    .lineTo(0, 0)
-
-			    .closePath(); 
-
-
-			//shape.graphics.beginFill("black").drawCircle(0, 0, 40);
-			//set position of shape
-			shape.x = shape.y = 50;
-			//add shape instance to stage display list
-			stage.addChild(shape);
-
-			stage.update();
+			var pattern = new Image();
+			pattern.onload = function() { $scope.drawShapeALineOnStage(pattern); };
+			pattern.src = $scope.pattern;
 
 		};
 
+		$scope.drawShapeALineOnStage = function(pattern) {
+
+				//Create a stage by getting a reference to the canvas
+				var canvas = document.getElementById("creator-canvas");
+				var stage = new createjs.Stage(canvas);
+
+				//Create a Shape DisplayObject
+				var shape = new createjs.Shape();
+
+				//draw lines
+				shape.graphics.moveTo(0, 0).beginStroke("black");
+
+				if($scope.pattern != '')
+					shape.graphics.beginBitmapFill(pattern, 'repeat');
+				else
+					shape.graphics.beginFill($scope.colorpicker.colour);
+
+				shape.graphics.moveTo(0, 0)
+				    .lineTo(80, -20)
+				    .lineTo(150, -20)
+				    .lineTo(230, 0)
+				    .lineTo(215, 15)
+				    .lineTo(150, 0)
+				    .lineTo(150, 70)
+				    .lineTo(80, 70)
+				    .lineTo(80, 0)
+				    .lineTo(15, 15)
+				    .lineTo(0, 0)
+
+				    .closePath(); 
+					//set position of shape
+					shape.x = shape.y = 50;
+					//add shape instance to stage display list
+					stage.addChild(shape);
+
+					stage.update();
+		};
+
 		$scope.drawShape();
+
+		$scope.setColour = function() {
+			$scope.colour = $scope.colorpicker.colour;
+			$scope.pattern = '';
+			$scope.drawShape();
+		};
 
 	}]);

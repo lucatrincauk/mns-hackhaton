@@ -11,7 +11,7 @@
 angular
 	.module('mnsHackhatonApp', [
 		'ngResource',
-		'ngSanitize', 'ui.router', 'firebase'
+		'ngSanitize', 'ui.router', 'firebase', 'colorpicker.module'
 	]).constant('FirebaseUrl', 'https://mns-hackhaton.firebaseio.com/')
 
 .config(function($stateProvider, $urlRouterProvider) {
