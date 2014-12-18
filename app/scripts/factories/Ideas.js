@@ -11,8 +11,16 @@ angular.module('mnsHackhatonApp')
 			return sync.$asArray();
 		};
 
+		var getOne = function(id) {
+			var refSingle = ref.child(id);
+			var sync = $firebase(refSingle);
+
+			return sync.$asObject();
+		};
+
 		return {
-			getAll: getAll
+			getAll: getAll,
+			getOne: getOne
 		};
 
 	}

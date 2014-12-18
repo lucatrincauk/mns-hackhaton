@@ -8,12 +8,15 @@
 </div>
 
 <div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
+  <h4>Ideas submitted</h4>
 
 
 
 <ul>
-  <li ng-repeat="idea in ideas">{{idea.title}}</li>
+  <li ng-repeat="idea in ideas">
+
+  <a ui-sref="app.detail({ id: (idea.$id)})">{{idea.title}}</a>
+  </li>
   
 </ul>
 </div>

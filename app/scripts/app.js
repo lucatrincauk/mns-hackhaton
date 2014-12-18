@@ -45,17 +45,18 @@ angular
 				}
 			}
 		}).state('app.detail', {
-			url: '/detail',
+
+			url: '/detail/:id',
 			views: {
 				'index@': {
 					templateUrl: 'views/detail.html',
-					controller: 'MainCtrl'
+					controller: 'SingleCtrl'
 				}
 			},
 			resolve: {
-				// dishes: function(Dishes) {
-				// 	return Dishes.getWeekly();
-				// }
+				idea: function(Ideas, $stateParams) {
+					return Ideas.getOne($stateParams.id);
+				}
 			}
 		}).state('app.addIdea', {
 			url: '/ideas/add',
