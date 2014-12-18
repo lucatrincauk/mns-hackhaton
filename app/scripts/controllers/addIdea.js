@@ -12,31 +12,12 @@ angular.module('mnsHackhatonApp')
 
 		$scope.idea = {};
 		$scope.ideas = ideas;
-		$scope.category = 'colour';
-
+		$scope.category = 'shape';
 		$scope.shape = '';
-		$scope.shapes = [{
-			id: 0,
-			name: 'A-Line', 
-			draw: $scope.drawShapeALine
-		}, {
-			id: 1,
-			name: 'Figure hugging', 
-			draw: $scope.drawShapeALine
-		}, {
-			id: 2,
-			name: 'Fit & Flare', 
-			draw: $scope.drawShapeALine
-		}, {
-			id: 3,
-			name: 'Pencil', 
-			draw: $scope.drawShapeALine
-		}];
-
-		$scope.colour = 'green';
-		$scope.colorpicker = { colour: '' };
-
+		$scope.colour = '';
 		$scope.pattern = 'http://asset2.marksandspencer.com/is/image/mands/RC_01_T62_3766K_EE_X_EC_88?$PDP_SWL_STD$';
+
+		$scope.colorpicker = { colour: '' };
 
 		$scope.addIdea = function() {
 			$scope.idea.vote = 0;
@@ -45,8 +26,6 @@ angular.module('mnsHackhatonApp')
 			}, function(error) {
 				console.log('Error:', error);
 			});
-
-
 		};
 
 		$scope.setCategory = function(cat) {
@@ -55,7 +34,7 @@ angular.module('mnsHackhatonApp')
 
 		$scope.setShape = function(shape) {
 			$scope.shape = shape;
-			$scope.drawShape();
+			$scope.shape.draw();
 		}
 		$scope.drawShape = function() {
 			if($scope.pattern != '')
@@ -109,12 +88,30 @@ angular.module('mnsHackhatonApp')
 					stage.update();
 		};
 
-		$scope.drawShape();
-
 		$scope.setColour = function() {
 			$scope.colour = $scope.colorpicker.colour;
 			$scope.pattern = '';
 			$scope.drawShape();
 		};
+
+
+
+		$scope.shapes = [{
+			id: 0,
+			name: 'A-Line', 
+			draw: $scope.drawShapeALine
+		}, {
+			id: 1,
+			name: 'Figure hugging', 
+			draw: $scope.drawShapeALine
+		}, {
+			id: 2,
+			name: 'Fit & Flare', 
+			draw: $scope.drawShapeALine
+		}, {
+			id: 3,
+			name: 'Pencil', 
+			draw: $scope.drawShapeALine
+		}];
 
 	}]);
