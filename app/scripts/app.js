@@ -40,9 +40,9 @@ angular
 				}
 			},
 			resolve: {
-				// dishes: function(Dishes) {
-				// 	return Dishes.getWeekly();
-				// }
+				ideas: function(Ideas) {
+					return Ideas.getAll();
+				}
 			}
 		}).state('app.detail', {
 			url: 'detail',
@@ -62,13 +62,13 @@ angular
 			views: {
 				'index@': {
 					templateUrl: 'views/form.html',
-					controller: 'MainCtrl'
+					controller: 'AddIdea'
 				}
 			},
 			resolve: {
-				// dishes: function(Dishes) {
-				// 	return Dishes.getWeekly();
-				// }
+				ideas: function(Ideas) {
+					return Ideas.getAll();
+				}
 			}
 		});
 

@@ -8,10 +8,8 @@
  * Controller of the mnsHackhatonApp
  */
 angular.module('mnsHackhatonApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+	.controller('MainCtrl', ['$scope', 'ideas', function($scope, ideas) {
+		$scope.ideas = ideas;
+
+		console.log($scope.ideas)
+	}]);
