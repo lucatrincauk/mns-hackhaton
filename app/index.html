@@ -28,9 +28,7 @@
       <div ui-view="header@"></div>
        <div ui-view="index@"></div>
 
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
+      <div ui-view="footer@"></div>
     </div>
 
 
@@ -58,6 +56,7 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/addIdea.js"></script>
         <!-- endbuild -->
 </body>
 </html>
