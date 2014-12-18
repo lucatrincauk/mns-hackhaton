@@ -84,3 +84,5 @@ body {
 .hot {
   background: rgba(255, 0, 0, 0.34)
 }
+.comment {border-top: 1px solid #eee; padding-top: 15px;}
+.comment:first-child {border-top: 0; padding-top: 0;}

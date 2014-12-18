@@ -1,4 +1,10 @@
-
+<br>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add a Comment</h3>
+  </div>
+  <div class="panel-body">
+    
 <form name="commentForm" ng-submit="addComment()">
 
   <div class="form-group">
@@ -19,7 +25,18 @@
 
 
 
-<div ng-repeat="comment in comments" class="media">
+  </div>
+</div>
+
+
+
+<div ng-show="comments.length" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Comments</h3>
+  </div>
+  <div class="panel-body">
+
+<div ng-repeat="comment in comments" class="media comment">
   <a class="media-left" href="#">
     <img src="http://lorempixel.com/64/64/people/{{$index}}" >
   </a>
@@ -28,3 +45,12 @@
     {{comment.content}}
   </div>
 </div>
+
+
+
+  </div>
+</div>
+
+
+
+
