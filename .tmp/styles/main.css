@@ -77,3 +77,10 @@ body {
     border-bottom: 0;
   }
 }
+
+.cold {
+  background: rgba(22, 140, 255, 0.42)
+}
+.hot {
+  background: rgba(255, 0, 0, 0.34)
+}
