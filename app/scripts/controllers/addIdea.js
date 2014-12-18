@@ -44,13 +44,7 @@ angular.module('mnsHackhatonApp')
 		};
 		$scope.drawShapeALine = function() {
 
-			var pattern = new Image();
-			pattern.onload = function() { $scope.drawShapeALineOnStage(pattern); };
-			pattern.src = $scope.pattern;
-
-		};
-
-		$scope.drawShapeALineOnStage = function(pattern) {
+			var drawShapeALineOnStage = function(pattern) {
 
 				//Create a stage by getting a reference to the canvas
 				var canvas = document.getElementById("creator-canvas");
@@ -86,12 +80,23 @@ angular.module('mnsHackhatonApp')
 					stage.addChild(shape);
 
 					stage.update();
+			};
+
+			if($scope.pattern != '') {
+				var pattern = new Image();
+				pattern.onload = function() { drawShapeALineOnStage(pattern) };
+				pattern.src = $scope.pattern;
+			} else {
+				drawShapeALineOnStage('');
+			}
+
+
 		};
 
 		$scope.setColour = function() {
 			$scope.colour = $scope.colorpicker.colour;
 			$scope.pattern = '';
-			$scope.drawShape();
+			$scope.shape.draw();
 		};
 
 
