@@ -10,6 +10,4 @@
 angular.module('mnsHackhatonApp')
 	.controller('MainCtrl', ['$scope', 'ideas', function($scope, ideas) {
 		$scope.ideas = ideas;
-
-		console.log($scope.ideas)
 	}]);
