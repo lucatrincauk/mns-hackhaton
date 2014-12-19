@@ -16,9 +16,9 @@ angular.module('mnsHackhatonApp')
 		$scope.ideas = ideas;
 
 		$scope.category = 'shape';
-		$scope.idea.shape = '';
-		$scope.idea.colour = '';
-		$scope.idea.pattern = '';
+		$scope.shape = '';
+		$scope.colour = '';
+		$scope.pattern = '';
 		$scope.shape = '';
 
 		$scope.colorpicker = {
@@ -26,10 +26,10 @@ angular.module('mnsHackhatonApp')
 		};
 
 		$scope.addIdea = function() {
-			$scope.idea.vote = 0;
-			$scope.idea.shape.draw = '';
-			console.log($scope.idea)
-			$scope.ideas.$add($scope.idea).then(function() {
+			$scope.vote = 0;
+			$scope.shape.draw = '';
+			console.log($scope)
+			$scope.ideas.$add($scope).then(function() {
 				console.log('Added successfully');
 				$state.go('app.index');
 			}, function(error) {
@@ -45,13 +45,11 @@ angular.module('mnsHackhatonApp')
 		 * SHAPE functions
 		 */
 		$scope.setShape = function(shape) {
-			$scope.idea.shape = shape;
 			$scope.shape = shape;
-			//$scope.shape.draw();
 			$scope.factoryShape.draw($scope.shape, $scope.colorpicker.colour, $scope.pattern);
 		}
 		$scope.drawShape = function() {
-			if ($scope.idea.pattern !== '')
+			if ($scope.pattern !== '')
 				$scope.drawShapeALine();
 			else
 				$scope.drawShapeALineOnStage();
@@ -61,18 +59,18 @@ angular.module('mnsHackhatonApp')
 		 * COLOUR functions
 		 */
 		$scope.setColour = function() {
-			$scope.idea.colour = $scope.colorpicker.colour;
-			$scope.idea.pattern = '';
-			$scope.shape.draw();
+			$scope.colour = $scope.colorpicker.colour;
+			$scope.pattern = '';
+			$scope.factoryShape.draw($scope.shape, $scope.colorpicker.colour, $scope.pattern);
 		};
 
 		/**
 		 * PATTERN functions
 		 */
 		$scope.setPattern = function(pattern) {
-			$scope.idea.pattern = pattern;
-			$scope.idea.colour = '';
-			$scope.shape.draw();
+			$scope.pattern = pattern;
+			$scope.colour = '';
+			$scope.factoryShape.draw($scope.shape, $scope.colorpicker.colour, $scope.pattern);
 		};
 
 
