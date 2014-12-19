@@ -13,7 +13,7 @@ angular
 		'ngResource',
 		'ngSanitize', 'ui.router', 'firebase', 'colorpicker.module'
 	]).constant('FirebaseUrl', 'https://mns-hackhaton.firebaseio.com/')
-	.constant('VoteRef', 10)
+	.constant('VoteRef', 20)
 
 .config(function($stateProvider, $urlRouterProvider) {
 
