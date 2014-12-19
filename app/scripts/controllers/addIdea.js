@@ -71,6 +71,8 @@ angular.module('mnsHackhatonApp')
 			$scope.factoryShape.draw(1, $scope.shape.id, $scope.colorpicker.colour, $scope.pattern);
 		};
 
+			$scope.factoryShape.draw(1, 2, $scope.colorpicker.colour, $scope.pattern);
+
 
 		//this data will come from server later
 		$scope.shapes = [{
@@ -79,10 +81,10 @@ angular.module('mnsHackhatonApp')
 		}, {
 			id: 1,
 			name: 'Empire Line'
-		}/*, {
-			id: 2,
-			name: 'Fit & Flare'
 		}, {
+			id: 2,
+			name: 'Shirtwaister'
+		}/*, {
 			id: 3,
 			name: 'Pencil'
 		}*/];

@@ -30,6 +30,9 @@ angular.module('mnsHackhatonApp')
 					case 1: //Empire Line
 						drawEmpireLine(shape);
 						break;
+					case 2: //Shirtwaister
+						drawShirtwaister(shape);
+						break;
 				};
 				
 				//add shape instance to stage display list
@@ -92,6 +95,29 @@ angular.module('mnsHackhatonApp')
 
 			//set position of shape
 			shape.x = 26;
+			shape.y = 50;
+	};
+
+	/** Shirtwaister **/
+	var drawShirtwaister = function(shape) {
+		shape.graphics.moveTo(85, -30)
+		    .lineTo(125, -25)
+		    .lineTo(165, -30)
+		    .lineTo(200, -10)
+		    .lineTo(180, 0)
+		    .lineTo(160, -10)
+		    .lineTo(150, 20)
+		    .lineTo(185, 70)
+		    .lineTo(65, 70)
+		    .lineTo(100, 20)
+		    .lineTo(90, -10)
+		    .lineTo(70, 0)
+		    .lineTo(50, -10)
+		    .lineTo(80, -30)
+		    .closePath(); 
+
+			//set position of shape
+			shape.x = 24;
 			shape.y = 50;
 	};
 
