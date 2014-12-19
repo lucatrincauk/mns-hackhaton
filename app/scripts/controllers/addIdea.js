@@ -26,7 +26,7 @@ angular.module('mnsHackhatonApp')
 		};
 
 		$scope.addIdea = function() {
-			$scope.vote = 0;
+			$scope.idea.vote = 0;
 			$scope.idea.shape = $scope.shape.id;
 			$scope.idea.colour = $scope.colour;
 			$scope.idea.pattern = $scope.pattern;
