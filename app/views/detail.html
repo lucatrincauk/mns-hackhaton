@@ -29,15 +29,19 @@
 {{idea.vote}}
 	
 </div>
+<div class="msg-tile" ng-show="idea.vote < voteRef">
+<strong>Info:</strong> This design needs {{voteRef - idea.vote }} more likes to become <span class="label label-danger">hot</span>
+
+</div>
+<div class="msg-tile" ng-show="idea.vote >= voteRef">
+<strong>Info:</strong> This design is <span class="label label-danger">hot</span>
+
+</div>
 <div class="msg-tile"><strong>Vote</strong>:
 	
 <button ng-hide="addedVoteUp" ng-click="voteUp()" type="button" class="btn btn-primary btn-xs glyphicon glyphicon-thumbs-up">&nbsp;like</button> 
 <button ng-hide="addedVoteDown" ng-click="voteDown()" type="button" class="btn btn-primary btn-xs glyphicon glyphicon-thumbs-down">&nbsp;unlike</button>
 	
-</div>
-<div class="msg-tile" ng-show="idea.vote < voteRef">
-<strong>Info:</strong> This design needs {{voteRef - idea.vote }} more likes to become <span class="label label-danger">hot</span>
-
 </div>
 
 
