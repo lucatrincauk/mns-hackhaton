@@ -5,20 +5,48 @@
   <p><a class="btn btn-primary btn-lg" ui-sref="app.addIdea" role="button">Start now</a></p>
 </div>
 <div class="page-header">
-  <h1>Ideas submitted</h1>
+  <h1>Design submitted</h1>
 </div>
 
   <div class="row">
-  <div class="col-sm-6 col-md-4" ng-repeat="idea in ideas | orderBy: 'vote' : true">
-    <div class="thumbnail" ng-class="{cold : idea.vote <= -voteRef, hot : idea.vote >= voteRef}">
-      <canvas class="creator-canvas canvas-{{idea.$id}}"></canvas>
+	  <div class="col-sm-6 col-md-4" ng-repeat="idea in ideas | orderBy: 'vote' : true">
+	    <div class="thumbnail" ng-class="{cold : idea.vote <= -voteRef, hot : idea.vote >= voteRef}">
+	      <canvas class="creator-canvas canvas-{{idea.$id}}"></canvas>
 
-      <div class="caption">
-        <h3>{{idea.title}}</h3>
-        <p><span ng-show="idea.vote">Score: {{idea.vote}}</span>&nbsp;</p>
-        <p><a ui-sref="app.detail({ id: (idea.$id)})" class="btn btn-primary" role="button">Open</a> </p>
-      </div>
-    </div>
-  </div>
+	      <div class="caption">
+	        <h3>{{idea.title}}</h3>
+	        <p><span ng-show="idea.vote">Score: {{idea.vote}}</span>&nbsp;</p>
+	        <p><a ui-sref="app.detail({ id: (idea.$id)})" class="btn btn-primary" role="button">Open</a> </p>
+	      </div>
+	    </div>
+	  </div>
+
 </div>
+
+<div class="page-header">
+  <h1>Some of your previous designs that are now on sale in M&S.com</h1>
+</div>
+
+<div class="row">
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	    	<img src="images/RC_01_T62_3764K_D0_X_EC_90.jpg">
+	    </div>
+	  
+	  </div>
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	    	<img src="images/RC_01_T62_3766K_EE_X_EC_90.jpg">
+	    </div>
+	  
+	  </div>
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	    	<img src="images/SD_01_T91_1376B_QV_X_EC_90.jpg">
+	    </div>
+	  
+	  </div>
+
+</div>
+
 
