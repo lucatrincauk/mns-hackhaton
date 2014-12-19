@@ -71,7 +71,8 @@ angular.module('mnsHackhatonApp')
 		    .closePath(); 
 
 			//set position of shape
-			shape.x = shape.y = 50;
+			shape.x = 38;
+			shape.y = 45;
 	};
 
 	/** Empire Line **/
@@ -90,7 +91,7 @@ angular.module('mnsHackhatonApp')
 		    .closePath(); 
 
 			//set position of shape
-			shape.x = 30;
+			shape.x = 26;
 			shape.y = 50;
 	};
 
