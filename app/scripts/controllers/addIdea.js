@@ -14,14 +14,19 @@ angular.module('mnsHackhatonApp')
 		$scope.ideas = ideas;
 
 		$scope.category = 'shape';
+		$scope.idea.shape = '';
+		$scope.idea.colour = '';
+		$scope.idea.pattern = '';
 		$scope.shape = '';
-		$scope.colour = '';
-		$scope.pattern = '';
 
-		$scope.colorpicker = { colour: '' };
+		$scope.colorpicker = {
+			colour: ''
+		};
 
 		$scope.addIdea = function() {
 			$scope.idea.vote = 0;
+			$scope.idea.shape.draw = '';
+			console.log($scope.idea)
 			$scope.ideas.$add($scope.idea).then(function() {
 				console.log('Added successfully');
 				$state.go('app.index');
@@ -38,11 +43,12 @@ angular.module('mnsHackhatonApp')
 		 * SHAPE functions
 		 */
 		$scope.setShape = function(shape) {
+			$scope.idea.shape = shape;
 			$scope.shape = shape;
 			$scope.shape.draw();
 		}
 		$scope.drawShape = function() {
-			if ($scope.pattern !== '')
+			if ($scope.idea.pattern !== '')
 				$scope.drawShapeALine();
 			else
 				$scope.drawShapeALineOnStage();
@@ -61,36 +67,38 @@ angular.module('mnsHackhatonApp')
 				//draw lines
 				shape.graphics.moveTo(0, 0).beginStroke("black");
 
-				if($scope.pattern != '')
+				if ($scope.idea.pattern != '')
 					shape.graphics.beginBitmapFill(pattern, 'repeat');
 				else
 					shape.graphics.beginFill($scope.colorpicker.colour);
 
 				shape.graphics.moveTo(0, 0)
-				    .lineTo(80, -20)
-				    .lineTo(150, -20)
-				    .lineTo(230, 0)
-				    .lineTo(215, 15)
-				    .lineTo(150, 0)
-				    .lineTo(150, 70)
-				    .lineTo(80, 70)
-				    .lineTo(80, 0)
-				    .lineTo(15, 15)
-				    .lineTo(0, 0)
+					.lineTo(80, -20)
+					.lineTo(150, -20)
+					.lineTo(230, 0)
+					.lineTo(215, 15)
+					.lineTo(150, 0)
+					.lineTo(150, 70)
+					.lineTo(80, 70)
+					.lineTo(80, 0)
+					.lineTo(15, 15)
+					.lineTo(0, 0)
 
-				    .closePath(); 
-					//set position of shape
-					shape.x = shape.y = 50;
-					//add shape instance to stage display list
-					stage.addChild(shape);
+				.closePath();
+				//set position of shape
+				shape.x = shape.y = 50;
+				//add shape instance to stage display list
+				stage.addChild(shape);
 
-					stage.update();
-			};		
+				stage.update();
+			};
 
-			if($scope.pattern != '') {
+			if ($scope.idea.pattern != '') {
 				var pattern = new Image();
-				pattern.onload = function() { drawShapeALineOnStage(pattern) };
-				pattern.src = $scope.pattern;
+				pattern.onload = function() {
+					drawShapeALineOnStage(pattern)
+				};
+				pattern.src = $scope.idea.pattern;
 			} else {
 				drawShapeALineOnStage('');
 			}
@@ -101,37 +109,37 @@ angular.module('mnsHackhatonApp')
 		 * COLOUR functions
 		 */
 		$scope.setColour = function() {
-			$scope.colour = $scope.colorpicker.colour;
-			$scope.pattern = '';
+			$scope.idea.colour = $scope.colorpicker.colour;
+			$scope.idea.pattern = '';
 			$scope.shape.draw();
 		};
 
 		/**
 		 * PATTERN functions
 		 */
-		 $scope.setPattern = function(pattern) {
-		 	$scope.pattern = pattern;
-			$scope.colour = '';
+		$scope.setPattern = function(pattern) {
+			$scope.idea.pattern = pattern;
+			$scope.idea.colour = '';
 			$scope.shape.draw();
-		 };
+		};
 
 
 		//this data will come from server later
 		$scope.shapes = [{
 			id: 0,
-			name: 'A-Line', 
+			name: 'A-Line',
 			draw: $scope.drawShapeALine
 		}, {
 			id: 1,
-			name: 'Figure hugging', 
+			name: 'Figure hugging',
 			draw: $scope.drawShapeALine
 		}, {
 			id: 2,
-			name: 'Fit & Flare', 
+			name: 'Fit & Flare',
 			draw: $scope.drawShapeALine
 		}, {
 			id: 3,
-			name: 'Pencil', 
+			name: 'Pencil',
 			draw: $scope.drawShapeALine
 		}];
 
