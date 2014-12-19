@@ -22,6 +22,7 @@ angular.module('mnsHackhatonApp')
 			});
 
 			$scope.comment = {};
+			$scope.addedComment = true;
 
 
 		};
