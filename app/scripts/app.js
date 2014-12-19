@@ -76,6 +76,9 @@ angular
 			resolve: {
 				ideas: function(Ideas) {
 					return Ideas.getAll();
+				},				
+				shape: function(Shape) {
+					return Shape;
 				}
 			}
 		});
