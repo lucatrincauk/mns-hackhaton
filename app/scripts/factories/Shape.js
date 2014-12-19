@@ -59,17 +59,18 @@ angular.module('mnsHackhatonApp')
 
 	/** A - Line **/
 	var drawALine = function(shape) {
-		shape.graphics.moveTo(0, 0)
+		shape.graphics.moveTo(20, 0)
 		    .lineTo(80, -20)
-		    .lineTo(150, -20)
-		    .lineTo(230, 0)
-		    .lineTo(215, 15)
+		    .bezierCurveTo(100, -10, 130, -10, 150, -20)
+		    .lineTo(210, 0)
+		    .lineTo(200, 15)
 		    .lineTo(150, 0)
-		    .lineTo(150, 70)
-		    .lineTo(80, 70)
+		    .lineTo(160, 70)
+		    .bezierCurveTo(130, 74, 100, 74, 70, 70)
+		    //.lineTo(70, 70)
 		    .lineTo(80, 0)
-		    .lineTo(15, 15)
-		    .lineTo(0, 0)
+		    .lineTo(35, 15)
+		    .lineTo(20, 0)
 
 		    .closePath(); 
 
