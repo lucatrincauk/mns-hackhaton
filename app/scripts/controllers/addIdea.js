@@ -53,9 +53,10 @@ angular.module('mnsHackhatonApp')
 			else
 				$scope.drawShapeALineOnStage();
 		};
+		/** Shape - A-Line  */
 		$scope.drawShapeALine = function() {
 
-			var drawShapeALineOnStage = function(pattern) {
+			var drawOnStage = function(pattern) {
 
 				//Create a stage by getting a reference to the canvas
 				var canvas = document.getElementById("creator-canvas");
@@ -99,11 +100,69 @@ angular.module('mnsHackhatonApp')
 					drawShapeALineOnStage(pattern)
 				};
 				pattern.src = $scope.idea.pattern;
+
 			} else {
-				drawShapeALineOnStage('');
+				drawOnStage('');
 			}
 
 		};
+		/** Shape - EmpireLine  */
+		$scope.drawShapeEmpireLine = function() {
+
+			var drawOnStage = function(pattern) {
+
+				//Create a stage by getting a reference to the canvas
+				var canvas = document.getElementById("creator-canvas");
+				var stage = new createjs.Stage(canvas);
+
+				//Create a Shape DisplayObject
+				var shape = new createjs.Shape();
+
+				//draw lines
+				shape.graphics.moveTo(0, 0).beginStroke("black");
+
+				if ($scope.pattern != '')
+					shape.graphics.beginBitmapFill(pattern, 'repeat');
+				else
+					shape.graphics.beginFill($scope.colorpicker.colour);
+
+				shape.graphics.moveTo(80, -30)
+					.lineTo(100, -30)
+					.lineTo(110, -15)
+					.lineTo(150, -15)
+					.lineTo(160, -30)
+					.lineTo(180, -30)
+					.lineTo(165, 5)
+					.lineTo(175, 70)
+					.lineTo(80, 70)
+					.lineTo(90, 5)
+
+				.closePath();
+				//set position of shape
+				shape.x = shape.y = 50;
+				//add shape instance to stage display list
+				stage.addChild(shape);
+
+				stage.update();
+			};
+
+			if ($scope.pattern != '') {
+				var pattern = new Image();
+				pattern.onload = function() {
+					drawOnStage(pattern)
+				};
+				pattern.src = $scope.pattern;
+			} else {
+				drawOnStage('');
+			}
+
+		};
+		$scope.shape = {
+			id: 1,
+			name: 'Figure hugging',
+			draw: $scope.drawShapeEmpireLine
+		};
+		$scope.drawShapeEmpireLine();
 
 		/**
 		 * COLOUR functions
@@ -131,8 +190,9 @@ angular.module('mnsHackhatonApp')
 			draw: $scope.drawShapeALine
 		}, {
 			id: 1,
-			name: 'Figure hugging',
-			draw: $scope.drawShapeALine
+
+			name: 'Empire Line',
+			draw: $scope.drawShapeEmpireLine
 		}, {
 			id: 2,
 			name: 'Fit & Flare',
