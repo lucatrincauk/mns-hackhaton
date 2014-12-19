@@ -3,14 +3,14 @@
 angular.module('mnsHackhatonApp')
 .factory('Shape', function() {
 
-	var draw = function(shapeID, colour, pattern) {
+	var draw = function(canvasID, shapeID, colour, pattern) {
 
 		var drawShapeInit = function() {
 
 			var drawOnStage = function(patternImg) {
 
 				//Create a stage by getting a reference to the canvas
-				var canvas = document.getElementsByClassName("canvas-" + shapeID)[0];
+				var canvas = document.getElementsByClassName("canvas-" + canvasID)[0];
 				var stage = new createjs.Stage(canvas);
 
 				//Create a Shape DisplayObject

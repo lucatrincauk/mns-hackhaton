@@ -14,7 +14,7 @@ angular.module('mnsHackhatonApp')
 		
 		idea.$loaded(function() {
 			$scope.idea = idea;
-			Shape.draw($scope.idea.shape, $scope.idea.colour, $scope.idea.pattern);
+			Shape.draw(1, $scope.idea.shape, $scope.idea.colour, $scope.idea.pattern);
 		});
 
 		$scope.voteRef = VoteRef;
