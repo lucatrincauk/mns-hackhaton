@@ -27,7 +27,6 @@ angular.module('mnsHackhatonApp')
 
 		$scope.addIdea = function() {
 			$scope.vote = 0;
-			console.log($scope.shape)
 			$scope.idea.shape = $scope.shape.id;
 			$scope.idea.colour = $scope.colour;
 			$scope.idea.pattern = $scope.pattern;
@@ -52,7 +51,7 @@ angular.module('mnsHackhatonApp')
 		$scope.setShape = function(shape) {
 			$scope.shape = shape;
 			$scope.factoryShape.draw($scope.shape, $scope.colorpicker.colour, $scope.pattern);
-		}
+		};
 		$scope.drawShape = function() {
 			if ($scope.pattern !== '')
 				$scope.drawShapeALine();
