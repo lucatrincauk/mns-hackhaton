@@ -1,7 +1,7 @@
 <div>
 	<ul class="creator-patterns">
 		<li class="creator-pattern" ng-repeat="pat in patterns">
-			<a href="" ng-style="{ 'background-image': 'url(' + pat + ')' }"></a>
+			<a href="" ng-style="{ 'background-image': 'url(' + pat + ')' }" ng-click="setPattern(pat)"></a>
 		</li>
 	</ul>
 </div>

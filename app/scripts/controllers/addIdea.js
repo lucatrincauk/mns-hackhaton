@@ -13,7 +13,7 @@ angular.module('mnsHackhatonApp')
 		$scope.idea = {};
 		$scope.ideas = ideas;
 
-		$scope.category = 'pattern';
+		$scope.category = 'shape';
 		$scope.shape = '';
 		$scope.colour = '';
 		$scope.pattern = '';
@@ -34,6 +34,9 @@ angular.module('mnsHackhatonApp')
 			$scope.category = cat;
 		};
 
+		/**
+		 * SHAPE functions
+		 */
 		$scope.setShape = function(shape) {
 			$scope.shape = shape;
 			$scope.shape.draw();
@@ -94,13 +97,23 @@ angular.module('mnsHackhatonApp')
 
 		};
 
+		/**
+		 * COLOUR functions
+		 */
 		$scope.setColour = function() {
 			$scope.colour = $scope.colorpicker.colour;
 			$scope.pattern = '';
 			$scope.shape.draw();
 		};
 
-
+		/**
+		 * PATTERN functions
+		 */
+		 $scope.setPattern = function(pattern) {
+		 	$scope.pattern = pattern;
+			$scope.colour = '';
+			$scope.shape.draw();
+		 };
 
 
 		//this data will come from server later
