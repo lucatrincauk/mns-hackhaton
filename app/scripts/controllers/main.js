@@ -8,7 +8,7 @@
  * Controller of the mnsHackhatonApp
  */
 angular.module('mnsHackhatonApp')
-	.controller('MainCtrl', ['$scope', 'ideas', 'VoteRef', function($scope, ideas, VoteRef) {
+	.controller('MainCtrl', ['$scope', 'ideas', 'VoteRef', 'Shape', function($scope, ideas, VoteRef, Shape) {
 		$scope.ideas = ideas;
 		$scope.voteRef = VoteRef;
 	}]);

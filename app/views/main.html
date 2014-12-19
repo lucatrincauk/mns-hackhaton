@@ -10,7 +10,9 @@
   <div class="row">
   <div class="col-sm-6 col-md-4" ng-repeat="idea in ideas | orderBy: 'vote' : true">
     <div class="thumbnail" ng-class="{cold : idea.vote <= -voteRef, hot : idea.vote >= voteRef}">
-      <img src="http://lorempixel.com/300/300/fashion/{{$index}}" alt="{{idea.title}}">
+      <!--<img src="http://lorempixel.com/300/300/fashion/{{$index}}" alt="{{idea.title}}">-->
+      <canvas class="creator-canvas canvas-{{idea.shape}}"></canvas>
+
       <div class="caption">
         <h3>{{idea.title}}</h3>
         <p><span ng-show="idea.vote">Score: {{idea.vote}}</span>&nbsp;</p>

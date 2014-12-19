@@ -10,7 +10,7 @@ angular.module('mnsHackhatonApp')
 			var drawOnStage = function(patternImg) {
 
 				//Create a stage by getting a reference to the canvas
-				var canvas = document.getElementById("creator-canvas");
+				var canvas = document.getElementsByClassName("canvas-" + shapeID)[0];
 				var stage = new createjs.Stage(canvas);
 
 				//Create a Shape DisplayObject
