@@ -6,16 +6,25 @@
 			<div class="col-md-7 creator-options">
 
 				<div class="msg-tile">
-Title: 
+<strong>Title</strong>: 
 {{idea.title}}
+</div><div class="msg-tile">
+<strong>Author</strong>: 
+{{idea.author}}
 </div>
-<div>Vote:
+<div class="msg-tile"><strong>Score</strong>:
 {{idea.vote}}
 	
 </div>
+<div class="msg-tile"><strong>Vote</strong>:
+	
 <button ng-hide="addedVoteUp" ng-click="voteUp()" type="button" class="btn btn-primary btn-xs glyphicon glyphicon-thumbs-up">&nbsp;like</button> 
 <button ng-hide="addedVoteDown" ng-click="voteDown()" type="button" class="btn btn-primary btn-xs glyphicon glyphicon-thumbs-down">&nbsp;unlike</button>
-<p ng-show="idea.vote < voteRef">Need {{voteRef - idea.vote }} more likes</p>
+	
+</div>
+<div class="msg-tile" ng-show="idea.vote < voteRef">
+<strong>Info:</strong> This design needs {{voteRef - idea.vote }} more likes to become <span class="label label-danger">hot</span>
+</div>
 
 			</div>
 			<div class="col-md-5 creator-canvas-container">

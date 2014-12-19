@@ -84,3 +84,7 @@ min-height: 500px;
 }
 .comment {border-top: 1px solid #eee; padding-top: 15px;}
 .comment:first-child {border-top: 0; padding-top: 0;}
+.msg-tile {
+border-bottom: 1px solid rgb(194, 194, 194);
+padding: 10px 0;
+}
