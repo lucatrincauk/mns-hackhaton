@@ -20,6 +20,8 @@ angular.module('mnsHackhatonApp')
 				$scope.idea.vote = $scope.idea.vote + 1;
 			}
 			$scope.idea.$save();
+			$scope.addedVoteUp = true;
+			$scope.addedVoteDown = false;
 		};
 		$scope.voteDown = function() {
 			if (!$scope.idea.vote) {
@@ -29,6 +31,8 @@ angular.module('mnsHackhatonApp')
 				$scope.idea.vote = $scope.idea.vote - 1;
 			}
 			$scope.idea.$save();
+			$scope.addedVoteDown = true;
+			$scope.addedVoteUp = false;
 
 		};
 
