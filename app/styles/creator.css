@@ -24,3 +24,16 @@
 	width: 24px;
 	height: 24px;
 }
+.creator-patterns {
+	padding: 0;
+}
+.creator-pattern {
+	display: inline-block;
+	margin-right: 6px;
+	list-style: none;
+}
+.creator-pattern a {
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+}

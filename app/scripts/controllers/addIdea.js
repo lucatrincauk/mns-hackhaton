@@ -12,10 +12,11 @@ angular.module('mnsHackhatonApp')
 
 		$scope.idea = {};
 		$scope.ideas = ideas;
-		$scope.category = 'shape';
+
+		$scope.category = 'pattern';
 		$scope.shape = '';
 		$scope.colour = '';
-		$scope.pattern = 'http://asset2.marksandspencer.com/is/image/mands/RC_01_T62_3766K_EE_X_EC_88?$PDP_SWL_STD$';
+		$scope.pattern = '';
 
 		$scope.colorpicker = { colour: '' };
 
@@ -102,7 +103,7 @@ angular.module('mnsHackhatonApp')
 
 
 
-
+		//this data will come from server later
 		$scope.shapes = [{
 			id: 0,
 			name: 'A-Line', 
@@ -120,5 +121,12 @@ angular.module('mnsHackhatonApp')
 			name: 'Pencil', 
 			draw: $scope.drawShapeALine
 		}];
+
+		$scope.patterns = [
+			"http://asset2.marksandspencer.com/is/image/mands/RC_01_T62_3766K_EE_X_EC_88?$PDP_SWL_STD$",
+			"http://asset1.marksandspencer.com/is/image/mands/SD_01_T91_1779_T4_X_EC_88?$PDP_SWL_STD$",
+			"http://asset2.marksandspencer.com/is/image/mands/SD_01_T42_6065E_KU_X_EC_88?$PDP_SWL_STD$",
+			"http://asset2.marksandspencer.com/is/image/mands/SD_01_T66_8310_RU_X_EC_88?$PDP_SWL_STD$"
+		];
 
 	}]);
