@@ -32,8 +32,6 @@ angular.module('mnsHackhatonApp')
 						break;
 				};
 				
-				//set position of shape
-				shape.x = shape.y = 50;
 				//add shape instance to stage display list
 				stage.addChild(shape);
 
@@ -70,7 +68,10 @@ angular.module('mnsHackhatonApp')
 		    .lineTo(15, 15)
 		    .lineTo(0, 0)
 
-		    .closePath();  
+		    .closePath(); 
+
+			//set position of shape
+			shape.x = shape.y = 50;
 	};
 
 	/** Empire Line **/
@@ -87,6 +88,10 @@ angular.module('mnsHackhatonApp')
 		    .lineTo(90, 5)
 
 		    .closePath(); 
+
+			//set position of shape
+			shape.x = 30;
+			shape.y = 50;
 	};
 
 	return {
