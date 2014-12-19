@@ -21,6 +21,8 @@ angular.module('mnsHackhatonApp')
 				console.log('Error:', error);
 			});
 
+			$scope.comment = {};
+
 
 		};
 
