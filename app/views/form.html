@@ -20,9 +20,9 @@
 		<div class="container-fluid">
 			<ul class="nav navbar-nav">
 				<li ng-class="{active: category=='shape'}"><a href="" ng-click="setCategory('shape')">Shape</a></li>
-				<li ng-class="{active: category=='colour'}"><a href="" ng-click="setCategory('colour')">Colour</a></li>
-				<li ng-class="{active: category=='pattern'}"><a href="" ng-click="setCategory('pattern')">Pattern</a></li>
-				<li ng-class="{active: category=='features'}"><a href="" ng-click="setCategory('features')">Features</a></li>
+				<li ng-class="{active: category=='colour',disabled : shape.length < 1}"><a href="" ng-click="setCategory('colour')">Colour</a></li>
+				<li ng-class="{active: category=='pattern',disabled : shape.length < 1}"><a href="" ng-click="setCategory('pattern')">Pattern</a></li>
+				<li ng-class="{active: category=='features',disabled : shape.length < 1}"><a href="" ng-click="setCategory('features')">Features</a></li>
 			</ul>
 		</div>
 	</nav>
