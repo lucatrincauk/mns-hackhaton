@@ -1,21 +1,21 @@
-.creator {
-	margin: 30px 0 50px;
-}
+
 .creator nav {
 	margin-bottom: 0;
 }
-.creator-options {
+/*.creator-options {
 	padding: 10px 14px;
 	height: 350px;
 	background: #ddd;
-}
+}*/
 .creator-canvas-container {
 	padding: 0;
 }
 .creator-canvas {
-	width: 100%;
-	height: 350px;
-	background: #eee;
+width: 100%;
+height: 350px;
+background: #F5F5F5;
+border: 1px solid rgb(221, 221, 221);
+border-radius: 5px;
 }
 
 .colorpicker-preview {
@@ -37,3 +37,4 @@
 	width: 32px;
 	height: 32px;
 }
+.ideaForm button {margin-bottom: 20px;}
