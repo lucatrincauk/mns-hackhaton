@@ -2,7 +2,7 @@
 	<div class="dropdown">
 		<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">{{shape.name || "Select shape"}}</button>
 		
-		<ul class="dropdown-menu" ng-repeat="shape in shapes">
+		<ul class="dropdown-menu">
 			<li ng-repeat="shape in shapes"><a href="" ng-click="setShape(shape)">{{shape.name}}</a></li>
 		</ul>
 	</div>
