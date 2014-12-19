@@ -8,8 +8,14 @@
  * Controller of the mnsHackhatonApp
  */
 angular.module('mnsHackhatonApp')
-	.controller('SingleCtrl', ['$scope', 'idea', 'VoteRef', function($scope, idea, VoteRef) {
-		$scope.idea = idea;
+	.controller('SingleCtrl', ['$scope', 'idea', 'VoteRef', 'Shape', function($scope, idea, VoteRef, Shape) {
+
+		$scope.factoryShape = Shape;
+		
+		idea.$loaded(function() {
+			$scope.idea = idea
+			Shape.draw($scope.idea.shape, $scope.idea.colour, $scope.idea.pattern);
+		})
 
 		$scope.voteRef = VoteRef;
 		$scope.voteUp = function() {

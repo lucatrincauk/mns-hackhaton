@@ -3,7 +3,7 @@
 angular.module('mnsHackhatonApp')
 .factory('Shape', function() {
 
-	var draw = function(shapeObj, colour, pattern) {
+	var draw = function(shapeID, colour, pattern) {
 
 		var drawShapeInit = function() {
 
@@ -24,7 +24,7 @@ angular.module('mnsHackhatonApp')
 				else
 					shape.graphics.beginFill(colour);
 
-				switch (shapeObj.id) {
+				switch (shapeID) {
 					case 0: //A-Line
 						drawALine(shape);
 						break;

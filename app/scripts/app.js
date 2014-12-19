@@ -64,6 +64,9 @@ angular
 				},
 				comments: function(Comments, $stateParams) {
 					return Comments.getOne($stateParams.id);
+				},				
+				shape: function(Shape) {
+					return Shape;
 				}
 			}
 		}).state('app.addIdea', {
