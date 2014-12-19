@@ -79,13 +79,13 @@ angular.module('mnsHackhatonApp')
 		}, {
 			id: 1,
 			name: 'Empire Line'
-		}, {
+		}/*, {
 			id: 2,
 			name: 'Fit & Flare'
 		}, {
 			id: 3,
 			name: 'Pencil'
-		}];
+		}*/];
 
 		$scope.patterns = [
 			"http://asset2.marksandspencer.com/is/image/mands/RC_01_T62_3766K_EE_X_EC_88?$PDP_SWL_STD$",
