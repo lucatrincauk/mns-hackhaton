@@ -59,7 +59,7 @@ angular.module('mnsHackhatonApp')
 		$scope.setColour = function() {
 			$scope.colour = $scope.colorpicker.colour;
 			$scope.pattern = '';
-			$scope.factoryShape.draw(1, $scope.colorpicker.colour, $scope.pattern);
+			$scope.factoryShape.draw(1, $scope.shape.id, $scope.colorpicker.colour, $scope.pattern);
 		};
 
 		/**
@@ -68,7 +68,7 @@ angular.module('mnsHackhatonApp')
 		$scope.setPattern = function(pattern) {
 			$scope.pattern = pattern;
 			$scope.colour = '';
-			$scope.factoryShape.draw(1, $scope.colorpicker.colour, $scope.pattern);
+			$scope.factoryShape.draw(1, $scope.shape.id, $scope.colorpicker.colour, $scope.pattern);
 		};
 
 
