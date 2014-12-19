@@ -12,10 +12,19 @@ angular.module('mnsHackhatonApp')
 		$scope.ideas = ideas;
 		$scope.voteRef = VoteRef;
 
-		$scope.ideas.$loaded(function() {
-			$scope.ideas = ideas;
-			angular.forEach($scope.ideas, function(idea, key) {
-				Shape.draw(idea.$id, idea.shape, idea.colour, idea.pattern);
-			});
+		$scope.ideas.$watch(function(e) {
+
+
+			$scope.tempIdea = $scope.ideas[$scope.ideas.length - 1];
+			Shape.draw($scope.tempIdea.$id, $scope.tempIdea.shape, $scope.tempIdea.colour, $scope.tempIdea.pattern);
+
+
 		});
+
+		// $scope.ideas.$loaded(function() {
+		// 	$scope.ideas = ideas;
+		// 	angular.forEach($scope.ideas, function(idea, key) {
+		// 		Shape.draw(idea.$id, idea.shape, idea.colour, idea.pattern);
+		// 	});
+		// });
 	}]);
