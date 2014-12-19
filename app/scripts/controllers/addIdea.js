@@ -38,6 +38,9 @@ angular.module('mnsHackhatonApp')
 		};
 
 		$scope.setCategory = function(cat) {
+			if ($scope.shape === '') {
+				return;
+			}
 			$scope.category = cat;
 		};
 
