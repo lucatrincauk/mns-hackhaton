@@ -71,9 +71,6 @@ angular.module('mnsHackhatonApp')
 			$scope.factoryShape.draw(1, $scope.shape.id, $scope.colorpicker.colour, $scope.pattern);
 		};
 
-			$scope.factoryShape.draw(1, 2, $scope.colorpicker.colour, $scope.pattern);
-
-
 		//this data will come from server later
 		$scope.shapes = [{
 			id: 0,
