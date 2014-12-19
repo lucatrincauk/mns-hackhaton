@@ -13,6 +13,7 @@ angular
 		'ngResource',
 		'ngSanitize', 'ui.router', 'firebase', 'colorpicker.module'
 	]).constant('FirebaseUrl', 'https://mns-hackhaton.firebaseio.com/')
+	.constant('VoteRef', 20)
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -61,9 +62,9 @@ angular
 				idea: function(Ideas, $stateParams) {
 					return Ideas.getOne($stateParams.id);
 				},
-			comments: function(Comments, $stateParams) {
-				return Comments.getOne($stateParams.id);
-			}
+				comments: function(Comments, $stateParams) {
+					return Comments.getOne($stateParams.id);
+				}
 			}
 		}).state('app.addIdea', {
 			url: '/ideas/add',

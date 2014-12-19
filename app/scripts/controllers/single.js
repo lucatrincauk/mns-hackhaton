@@ -8,9 +8,10 @@
  * Controller of the mnsHackhatonApp
  */
 angular.module('mnsHackhatonApp')
-	.controller('SingleCtrl', ['$scope', 'idea', function($scope, idea) {
+	.controller('SingleCtrl', ['$scope', 'idea', 'VoteRef', function($scope, idea, VoteRef) {
 		$scope.idea = idea;
 
+		$scope.voteRef = VoteRef;
 		$scope.voteUp = function() {
 			if (!$scope.idea.vote) {
 				$scope.idea.vote = 1;

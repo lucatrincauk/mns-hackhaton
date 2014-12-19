@@ -1,10 +1,15 @@
+<div class="jumbotron">
+  <h1>Design your own dress</h1>
+  <p>Create your bespoke dress and have it rated by the community. When it reaches {{voteRef}} votes, it becomes <span class="label label-danger">hot</span>. But if it reaches -{{voteRef}} votes, it will be <span class="label label-info">cold</span>. Brrr.<p>
+  <p><a class="btn btn-primary btn-lg" ui-sref="app.addIdea" role="button">Start now</a></p>
+</div>
 <div class="page-header">
   <h1>Ideas submitted</h1>
 </div>
 
   <div class="row">
   <div class="col-sm-6 col-md-4" ng-repeat="idea in ideas | orderBy: 'vote' : true">
-    <div class="thumbnail" ng-class="{cold : idea.vote <= -10, hot : idea.vote >= 10}">
+    <div class="thumbnail" ng-class="{cold : idea.vote <= -voteRef, hot : idea.vote >= voteRef}">
       <img src="http://lorempixel.com/300/300/fashion/{{$index}}" alt="{{idea.title}}">
       <div class="caption">
         <h3>{{idea.title}}</h3>

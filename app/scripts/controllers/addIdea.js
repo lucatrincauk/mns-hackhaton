@@ -16,14 +16,19 @@ angular.module('mnsHackhatonApp')
 		$scope.ideas = ideas;
 
 		$scope.category = 'shape';
+		$scope.idea.shape = '';
+		$scope.idea.colour = '';
+		$scope.idea.pattern = '';
 		$scope.shape = '';
-		$scope.colour = '';
-		$scope.pattern = '';
 
-		$scope.colorpicker = { colour: '' };
+		$scope.colorpicker = {
+			colour: ''
+		};
 
 		$scope.addIdea = function() {
 			$scope.idea.vote = 0;
+			$scope.idea.shape.draw = '';
+			console.log($scope.idea)
 			$scope.ideas.$add($scope.idea).then(function() {
 				console.log('Added successfully');
 				$state.go('app.index');
@@ -40,12 +45,13 @@ angular.module('mnsHackhatonApp')
 		 * SHAPE functions
 		 */
 		$scope.setShape = function(shape) {
+			$scope.idea.shape = shape;
 			$scope.shape = shape;
 			//$scope.shape.draw();
 			$scope.factoryShape.draw($scope.shape, $scope.colorpicker.colour, $scope.pattern);
 		}
 		$scope.drawShape = function() {
-			if ($scope.pattern !== '')
+			if ($scope.idea.pattern !== '')
 				$scope.drawShapeALine();
 			else
 				$scope.drawShapeALineOnStage();
@@ -55,38 +61,34 @@ angular.module('mnsHackhatonApp')
 		 * COLOUR functions
 		 */
 		$scope.setColour = function() {
-			$scope.colour = $scope.colorpicker.colour;
-			$scope.pattern = '';
+			$scope.idea.colour = $scope.colorpicker.colour;
+			$scope.idea.pattern = '';
 			$scope.shape.draw();
 		};
 
 		/**
 		 * PATTERN functions
 		 */
-		 $scope.setPattern = function(pattern) {
-		 	$scope.pattern = pattern;
-			$scope.colour = '';
+		$scope.setPattern = function(pattern) {
+			$scope.idea.pattern = pattern;
+			$scope.idea.colour = '';
 			$scope.shape.draw();
-		 };
+		};
 
 
 		//this data will come from server later
 		$scope.shapes = [{
 			id: 0,
-			name: 'A-Line', 
-			draw: $scope.drawShapeALine
+			name: 'A-Line'
 		}, {
 			id: 1,
-			name: 'Emoire Line', 
-			draw: $scope.drawShapeEmpireLine
+			name: 'Empire Line'
 		}, {
 			id: 2,
-			name: 'Fit & Flare', 
-			draw: $scope.drawShapeALine
+			name: 'Fit & Flare'
 		}, {
 			id: 3,
-			name: 'Pencil', 
-			draw: $scope.drawShapeALine
+			name: 'Pencil'
 		}];
 
 		$scope.patterns = [
